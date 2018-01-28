@@ -30,30 +30,31 @@
           <form class="" method="post" action="https://formspree.io/" style="">
             <div class="form-group">
               <br>
-            <input type="text" name="pantalla" class="form-control form-control-lg" placeholder="0123456789" id="pantalla"> </div>
+            <input type="text" name="pantalla" id="pantalla" readonly class="form-control form-control-lg" placeholder="0123456789" id="pantalla"> </div>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="suma">1</button>
-            <button type="button" class="btn btn-primary" id="resta">2</button>
-            <button type="button" class="btn btn-primary" id="multi">3</button>
-            <button type="button" class="btn btn-primary btn-sm" id="divide">4</button>
+            <button type="button" class="btn btn-primary" onclick="operando(1)" id="1">1</button>
+            <button type="button" class="btn btn-primary" onclick="operando(2)" id="2">2</button>
+            <button type="button" class="btn btn-primary" onclick="operando(3)" id="3">3</button>
+            <button type="button" class="btn btn-primary" onclick="operador(1)" id="suma">+</button>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="divide">5</button>
-            <button type="button" class="btn btn-primary" id="divide">6</button>
-            <button type="button" class="btn btn-primary" id="divide">7</button>
-            <button type="button" class="btn btn-primary" id="divide">8</button>
+            <button type="button" class="btn btn-primary" onclick="operando(4)" id="4">4</button>
+            <button type="button" class="btn btn-primary" onclick="operando(5)" id="5">5</button>
+            <button type="button" class="btn btn-primary" onclick="operando(6)" id="6">6</button>
+            <button type="button" class="btn btn-primary" onclick="operador(2)" id="resta">-</button>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="divide">9</button>
-            <button type="button" class="btn btn-primary" id="divide">0</button>
-            <button type="button" class="btn btn-primary" id="divide">+</button>
-            <button type="button" class="btn btn-primary" id="divide">-</button>
+            <button type="button" class="btn btn-primary" onclick="operando(7)" id="7">7</button>
+            <button type="button" class="btn btn-primary" onclick="operando(8)" id="8">8</button>
+            <button type="button" class="btn btn-primary" onclick="operando(9)" id="9">9</button>
+            <button type="button" class="btn btn-primary" onclick="operador(3)" id="division">/</button>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" id="divide">/</button>
-            <button type="button" class="btn btn-primary" id="divide">*</button>
-            <button type="button" class="btn btn-primary" id="divide">=</button>
+            <button type="button" class="btn btn-primary" onclick="operando(0)" id="0">0</button>
+            <button type="button" class="btn btn-primary" onclick="limpiar()" id="limpiar">C</button>
+            <button type="button" class="btn btn-primary" onclick="igual()" id="igual">=</button>
+            <button type="button" class="btn btn-primary" onclick="operador(4)" id="multiplicacion">*</button>
             <br>
             <br> </form>
         </div>
@@ -87,37 +88,55 @@
   </script>
   <script>
     var numero1=0;
-var numero2=0;
-var resultado=0;
+    var numero2=0;
+    var operacion;
 
-function capturar(){
-	numero1=parseInt(document.getElementById('num1').value);
-	numero2=parseInt(document.getElementById('num2').value);
-}
+    function operando(numero){
+      if(numero1==0 && numero1!='0'){
+        numero1=numero;
+      }else{
+        numero1+=numero;
+      }
+      actualizar();
+    }
 
-function sumar(){
-	capturar();
-	resultado=numero1+numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
+    function limpiar(){
+      numero1=0;
+      numero2=0;
+      actualizar();
+    }
 
-function restar(){
-	capturar();
-	resultado=numero1-numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
+    function operador(valor){
+      if(numero1==0){
+        numero1=parseInt(document.getElementById("pantalla").value);
+      }
+      numero2=parseInt(numero1);
+      numero1=0;
+      operacion=valor;
+    }
 
-function multiplicar(){
-	capturar();
-	resultado=numero1*numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
+    function igual(){
+      numero1=parseInt(numero1);
+      if(opera == '1'){
+        numero1+=numero2;
+      }
+      else if(opera == '2'){
+        numero1-=numero2;
+      }
+      else if (opera == '3'){
+        numero1=numero2/numero1;
+      }
+      else{
+        numero1*=numero2;
+      }
+      actualizar();
+      numero2=parseInt(numero1);
+      numero1=0;
+    }
 
-function dividir(){
-	capturar();
-	resultado=numero1/numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
+    function actualizar(){
+      document.getElementById("pantalla").value = numero1;
+    }
   </script>&gt;
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:110px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">made with&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 
