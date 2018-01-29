@@ -24,37 +24,36 @@
   <!-- Footer -->
   <!-- JavaScript dependencies -->
   <div class="py-5">
-    <div class="container">
-      <div class="row">
+    <div class="container" align="center">
+      <div class="row" align="center">
         <div class="col-md-4 col-sm-7" style="" align="center">
           <form class="" method="post" action="https://formspree.io/" style="">
-            <div class="form-group">
-              <br>
-            <input type="text" name="pantalla" id="pantalla" readonly class="form-control form-control-lg" placeholder="0123456789" id="pantalla"> </div>
+            <div class="form-group"></div>
+            <input type="text" id="pantalla" class="form-control form-control-lg" placeholder="0123456789" readonly="true"/>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" onclick="operando(1)" id="1">1</button>
-            <button type="button" class="btn btn-primary" onclick="operando(2)" id="2">2</button>
-            <button type="button" class="btn btn-primary" onclick="operando(3)" id="3">3</button>
-            <button type="button" class="btn btn-primary" onclick="operador(1)" id="suma">+</button>
+            <input type="button" class="btn btn-primary" value="1" onclick="enviar(1)"/>
+            <input type="button" class="btn btn-primary" value="2" onclick="enviar(2)"/>
+            <input type="button" class="btn btn-primary" value="3" onclick="enviar(3)"/>
+            <input type="button" class="btn btn-primary" value="+" onclick="enviar('+')"/>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" onclick="operando(4)" id="4">4</button>
-            <button type="button" class="btn btn-primary" onclick="operando(5)" id="5">5</button>
-            <button type="button" class="btn btn-primary" onclick="operando(6)" id="6">6</button>
-            <button type="button" class="btn btn-primary" onclick="operador(2)" id="resta">-</button>
+            <input type="button" class="btn btn-primary" value="4" onclick="enviar(4)"/>
+            <input type="button" class="btn btn-primary" value="5" onclick="enviar(5)"/>
+            <input type="button" class="btn btn-primary" value="6" onclick="enviar(6)""/>
+            <input type="button" class="btn btn-primary" value="-" onclick="enviar('-')"/>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" onclick="operando(7)" id="7">7</button>
-            <button type="button" class="btn btn-primary" onclick="operando(8)" id="8">8</button>
-            <button type="button" class="btn btn-primary" onclick="operando(9)" id="9">9</button>
-            <button type="button" class="btn btn-primary" onclick="operador(3)" id="division">/</button>
+            <input type="button" class="btn btn-primary" value="7" onclick="enviar(7)"/>
+            <input type="button" class="btn btn-primary" value="8" onclick="enviar(8)"/>
+            <input type="button" class="btn btn-primary" value="9" onclick="enviar(9)"/>
+            <input type="button" class="btn btn-primary" value="/" onclick="enviar('/')"/>
             <br>
             <br>
-            <button type="button" class="btn btn-primary" onclick="operando(0)" id="0">0</button>
-            <button type="button" class="btn btn-primary" onclick="limpiar()" id="limpiar">C</button>
-            <button type="button" class="btn btn-primary" onclick="igual()" id="igual">=</button>
-            <button type="button" class="btn btn-primary" onclick="operador(4)" id="multiplicacion">*</button>
+            <input type="button" class="btn btn-primary" value="0" onclick="enviar(0)"/>
+            <input type="button" class="btn btn-primary" value="C" onclick="enviar('C')"/>
+            <input type="button" class="btn btn-primary" value="=" onclick="enviar('=')"/>
+            <input type="button" class="btn btn-primary" value="*" onclick="enviar('*')"/>
             <br>
             <br> </form>
         </div>
@@ -86,59 +85,7 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-  <script>
-    var numero1=0;
-    var numero2=0;
-    var operacion;
+  <script src="calculadora.js"></script>
 
-    function operando(numero){
-      if(numero1==0 && numero1!='0'){
-        numero1=numero;
-      }else{
-        numero1+=numero;
-      }
-      actualizar();
-    }
-
-    function limpiar(){
-      numero1=0;
-      numero2=0;
-      actualizar();
-    }
-
-    function operador(valor){
-      if(numero1==0){
-        numero1=parseInt(document.getElementById("pantalla").value);
-      }
-      numero2=parseInt(numero1);
-      numero1=0;
-      operacion=valor;
-    }
-
-    function igual(){
-      numero1=parseInt(numero1);
-      if(opera == '1'){
-        numero1+=numero2;
-      }
-      else if(opera == '2'){
-        numero1-=numero2;
-      }
-      else if (opera == '3'){
-        numero1=numero2/numero1;
-      }
-      else{
-        numero1*=numero2;
-      }
-      actualizar();
-      numero2=parseInt(numero1);
-      numero1=0;
-    }
-
-    function actualizar(){
-      document.getElementById("pantalla").value = numero1;
-    }
-  </script>&gt;
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:110px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">made with&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
-
-
-</body></html>
+</body>
+</html>
