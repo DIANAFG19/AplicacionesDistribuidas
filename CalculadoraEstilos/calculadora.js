@@ -1,32 +1,22 @@
-var numero1=0;
-var numero2=0;
-var resultado=0;
-
-function capturar(){
-	numero1=parseInt(document.getElementById('numero1').value);
-	numero2=parseInt(document.getElementById('numero2').value);
+function enviar(num){
+	var anterior = document.getElementById("pantalla").value;
+	document.getElementById("pantalla").value = anterior + num;
+	var numero1 = document.getElementById("pantalla").value;
+	var operador = num;
+	/*if(operador == "+" || operador == "-" || operador == "/" || operador == "*" || operador == "="){
+		realizarOperacion(operador,numero1);
+		document.getElementById("pantalla").value = "";
+	}
 }
 
-function suma(){
-	capturar();
-	resultado=numero1+numero2;
-	document.getElementById('resultado').innerHTML=resultado;
+function limpiar(vacio){
+	document.getElementById("pantalla").value = vacio;
 }
 
-function resta(){
-	capturar();
-	resultado=numero1-numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
+function calcular(operador,numero1){
+	if(operador == "+"){
+		var resultado = numero1 + numero1;
+		document.getElementById("pantalla").value = resultado;
+	}*/	
 
-function multiplicacion(){
-	capturar();
-	resultado=numero1*numero2;
-	document.getElementById('resultado').innerHTML=resultado;
-}
-
-function division(){
-	capturar();
-	resultado=numero1/numero2;
-	document.getElementById('resultado').innerHTML=resultado;
 }

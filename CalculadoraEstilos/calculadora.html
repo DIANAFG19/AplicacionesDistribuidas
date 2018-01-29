@@ -29,28 +29,28 @@
         <div class="col-md-4 col-sm-7" style="" align="center">
           <form class="" method="post" action="https://formspree.io/" style="">
             <div class="form-group"></div>
-            <input type="text" id="pantalla" class="form-control form-control-lg" placeholder="0123456789" readonly="true"/>
+            <input type="text" id="pantalla" name="pantalla" class="form-control form-control-lg" placeholder="0123456789" readonly="true"/>
             <br>
             <br>
-            <input type="button" class="btn btn-primary" value="1" onclick="enviar(1)"/>
-            <input type="button" class="btn btn-primary" value="2" onclick="enviar(2)"/>
-            <input type="button" class="btn btn-primary" value="3" onclick="enviar(3)"/>
+            <input type="button" class="btn btn-primary" value="1" onclick="enviar('1')"/>
+            <input type="button" class="btn btn-primary" value="2" onclick="enviar('2')"/>
+            <input type="button" class="btn btn-primary" value="3" onclick="enviar('3')"/>
             <input type="button" class="btn btn-primary" value="+" onclick="enviar('+')"/>
             <br>
             <br>
-            <input type="button" class="btn btn-primary" value="4" onclick="enviar(4)"/>
-            <input type="button" class="btn btn-primary" value="5" onclick="enviar(5)"/>
-            <input type="button" class="btn btn-primary" value="6" onclick="enviar(6)""/>
+            <input type="button" class="btn btn-primary" value="4" onclick="enviar('4')"/>
+            <input type="button" class="btn btn-primary" value="5" onclick="enviar('5')"/>
+            <input type="button" class="btn btn-primary" value="6" onclick="enviar('6')"/>
             <input type="button" class="btn btn-primary" value="-" onclick="enviar('-')"/>
             <br>
             <br>
-            <input type="button" class="btn btn-primary" value="7" onclick="enviar(7)"/>
-            <input type="button" class="btn btn-primary" value="8" onclick="enviar(8)"/>
-            <input type="button" class="btn btn-primary" value="9" onclick="enviar(9)"/>
+            <input type="button" class="btn btn-primary" value="7" onclick="enviar('7')"/>
+            <input type="button" class="btn btn-primary" value="8" onclick="enviar('8')"/>
+            <input type="button" class="btn btn-primary" value="9" onclick="enviar('9')"/>
             <input type="button" class="btn btn-primary" value="/" onclick="enviar('/')"/>
             <br>
             <br>
-            <input type="button" class="btn btn-primary" value="0" onclick="enviar(0)"/>
+            <input type="button" class="btn btn-primary" value="0" onclick="enviar('0')"/>
             <input type="button" class="btn btn-primary" value="C" onclick="enviar('C')"/>
             <input type="button" class="btn btn-primary" value="=" onclick="enviar('=')"/>
             <input type="button" class="btn btn-primary" value="*" onclick="enviar('*')"/>
@@ -85,7 +85,7 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-  <script src="calculadora.js"></script>
+  <script type="text/JavaScript" src="calculadora.js"></script>
 
 </body>
 </html>
