@@ -1,22 +1,28 @@
-function enviar(num){
-	var anterior = document.getElementById("pantalla").value;
-	document.getElementById("pantalla").value = anterior + num;
-	var numero1 = document.getElementById("pantalla").value;
-	var operador = num;
-	/*if(operador == "+" || operador == "-" || operador == "/" || operador == "*" || operador == "="){
-		realizarOperacion(operador,numero1);
-		document.getElementById("pantalla").value = "";
-	}
-}
+var cifra = "";
+var acumulado = 0;
 
-function limpiar(vacio){
-	document.getElementById("pantalla").value = vacio;
-}
+function calculadora(boton) {
 
-function calcular(operador,numero1){
-	if(operador == "+"){
-		var resultado = numero1 + numero1;
-		document.getElementById("pantalla").value = resultado;
-	}*/	
+  var nodos = document.getElementsByClassName('display');
+  var nodo = nodos[0].firstChild;
 
+  switch(boton) {
+    case 'C':
+      // En el caso de pulsar en limpiar, deja en blanco el display.
+      nodo.nodeValue = "";
+      break;
+
+    case '=':
+      // Esta variable va a guardar el resultado de la operación en pantalla.
+      var resultado = eval(nodo.nodeValue);
+      
+      // Y aquí vamos a mostrarlo en el display.
+      nodo.nodeValue = resultado;
+      break;
+
+    default:
+      // De lo contrario, va a recoger los números que vayamos pulsando.
+      nodo.nodeValue = nodo.nodeValue + boton;
+      break;
+  }
 }

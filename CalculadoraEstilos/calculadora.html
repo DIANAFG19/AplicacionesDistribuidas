@@ -27,33 +27,35 @@
     <div class="container" align="center">
       <div class="row" align="center">
         <div class="col-md-4 col-sm-7" style="" align="center">
-          <form class="" method="post" action="https://formspree.io/" style="">
+          <!--<form class="" method="post" action="https://formspree.io/" style="">
             <div class="form-group"></div>
             <input type="text" id="pantalla" name="pantalla" class="form-control form-control-lg" placeholder="0123456789" readonly="true"/>
-            <br>
-            <br>
-            <input type="button" class="btn btn-primary" value="1" onclick="enviar('1')"/>
-            <input type="button" class="btn btn-primary" value="2" onclick="enviar('2')"/>
-            <input type="button" class="btn btn-primary" value="3" onclick="enviar('3')"/>
-            <input type="button" class="btn btn-primary" value="+" onclick="enviar('+')"/>
-            <br>
-            <br>
-            <input type="button" class="btn btn-primary" value="4" onclick="enviar('4')"/>
-            <input type="button" class="btn btn-primary" value="5" onclick="enviar('5')"/>
-            <input type="button" class="btn btn-primary" value="6" onclick="enviar('6')"/>
-            <input type="button" class="btn btn-primary" value="-" onclick="enviar('-')"/>
-            <br>
-            <br>
-            <input type="button" class="btn btn-primary" value="7" onclick="enviar('7')"/>
-            <input type="button" class="btn btn-primary" value="8" onclick="enviar('8')"/>
-            <input type="button" class="btn btn-primary" value="9" onclick="enviar('9')"/>
-            <input type="button" class="btn btn-primary" value="/" onclick="enviar('/')"/>
-            <br>
-            <br>
-            <input type="button" class="btn btn-primary" value="0" onclick="enviar('0')"/>
-            <input type="button" class="btn btn-primary" value="C" onclick="enviar('C')"/>
-            <input type="button" class="btn btn-primary" value="=" onclick="enviar('=')"/>
-            <input type="button" class="btn btn-primary" value="*" onclick="enviar('*')"/>
+            <br>-->
+              <div id="calculadora">
+              <!-- Se deja un espacio en blanco para que exista nodeValue -->
+              <div class="display"> </div>
+              <div  id="botones">
+              <br><br>
+              <button class="btn btn-primary" onclick="calculadora(7)">7</button>
+              <button class="btn btn-primary" onclick="calculadora(8)">8</button>
+              <button class="btn btn-primary" onclick="calculadora(9)">9</button>
+              <button class="btn btn-primary" onclick="calculadora('/')">÷</button>
+              <br><br>
+              <button class="btn btn-primary" onclick="calculadora(4)">4</button>
+              <button class="btn btn-primary" onclick="calculadora(5)">5</button>
+              <button class="btn btn-primary" onclick="calculadora(6)">6</button>
+              <button class="btn btn-primary" onclick="calculadora('*')">x</button>
+              <br><br>
+              <button class="btn btn-primary" onclick="calculadora(1)">1</button>
+              <button class="btn btn-primary" onclick="calculadora(2)">2</button>
+              <button class="btn btn-primary" onclick="calculadora(3)">3</button>
+              <button class="btn btn-primary" onclick="calculadora('-')">-</button>s
+              <br><br>
+              <button class="btn btn-primary" onclick="calculadora('C')">C</button>
+              <button class="btn btn-primary" onclick="calculadora(0)">0</button>
+              <button class="btn btn-primary" onclick="calculadora('=')">=</button>
+              <button class="btn btn-primary" onclick="calculadora('+')">+</button>
+      </div>
             <br>
             <br> </form>
         </div>
