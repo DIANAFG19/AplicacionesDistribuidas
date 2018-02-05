@@ -6,8 +6,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("button").click(function(){
-			$.ajax({
-				url: "https://jsonplaceholder.typicode.com/posts",
+			$.getJSON('https://jsonplaceholder.typicode.com/posts', {format: "json"}, function(data) {
+				$("#div1").html(data[0].id);  
+				$("#div2").html(data[0].title); 
+				$("#div3").html(data[0].body); 
+			});
+		});
+	});
+				/*url: "https://jsonplaceholder.typicode.com/posts",
 				success:function(result){
 					for(var algo in result){
 						$("#div1").html(result[algo].id);
@@ -18,11 +24,7 @@
 				}
 			});
 		});
-	});
-    </script>
-
-
-
+	});*/
 </script>
 </head>
 <body>
