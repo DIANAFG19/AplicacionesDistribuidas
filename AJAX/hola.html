@@ -6,10 +6,12 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("button").click(function(){
-			$.getJSON('https://jsonplaceholder.typicode.com/posts', {format: "json"}, function(data) {
-				$("#div1").html(data[0].id);  
-				$("#div2").html(data[0].title); 
-				$("#div3").html(data[0].body); 
+			$.getJSON('https://jsonplaceholder.typicode.com/posts', {format: "json"}, function(resultado) {
+				for (var i = resultado.length -1; i >= 0; i--) {
+					$("#div1").html(resultado[i].id); 
+					$("#div2").html(resultado[i].title); 
+					$("#div3").html(resultado[i].body);
+				}
 			});
 		});
 	});
